@@ -11,6 +11,36 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  @include respond(tab-land) {
+    .btn {
+      display: inline-block;
+      width: 18rem;
+      margin: 0px calc((100% - 18rem) / 2);
+      text-align: center;
+    }
+
+    h2,
+    h3 {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  @include respond(tab-port) {
+    .btn {
+      width: 18rem;
+      margin: 0px calc((100% - 18rem) / 2);
+    }
+  }
+
+  @include respond(phone) {
+    h2,
+    h3 {
+      letter-spacing: 1;
+      line-height: 1.2;
+    }
+  }
+
   &__content {
     @include center-X-Y;
     width: 75%;
@@ -22,12 +52,24 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
+
+    @include respond(tab-land) {
+      /*background-image: url(../img/nat-8-min.jpg);
+      background-size: cover;
+      background-position: center;
+      padding: 2rem 2rem;*/
+    }
   }
 
   &__left {
     width: 33.333333%;
     display: table-cell;
     vertical-align: middle;
+
+    @include respond(tab-land) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__right {
@@ -35,11 +77,27 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(tab-land) {
+      width: 100%;
+      display: block;
+      padding: 2rem 4rem;
+      vertical-align: auto;
+    }
   }
 
   &__img {
     display: block;
     width: 99.9%;
+
+    @include respond(tab-land) {
+      display: inline;
+      width: 49.8%;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   &__text {
@@ -58,6 +116,11 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    @include respond(tab-port) {
+      -moz-column-count: 1;
+      column-count: 1;
+    }
   }
 
   &:target {

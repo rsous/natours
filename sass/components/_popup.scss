@@ -61,13 +61,6 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
-
-    @include respond(tab-land) {
-      /*background-image: url(../img/nat-8-min.jpg);
-      background-size: cover;
-      background-position: center;
-      padding: 2rem 2rem;*/
-    }
   }
 
   &__left {
